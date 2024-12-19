@@ -35,6 +35,12 @@ body {
   padding: 0;
 }
 
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
 :root {
   /* colors */
   --purple-100: hsl(254, 88%, 90%);
@@ -70,10 +76,23 @@ body {
   background: var(--purple-100);
 }
 
+.text-white {
+  color: white;
+}
+
+.text-purple {
+  color: var(--purple-500);
+}
+
+.text-yellow {
+  color: var(--yellow-500);
+}
+
+
 body {
   font-size: 18px;
   background-color: var(--white);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 html {
