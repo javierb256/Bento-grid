@@ -53,6 +53,23 @@ body {
   font-family: "dmSansItalic";
   src: url(./assets/fonts/DMSans-Italic-VariableFont_opsz\wght.ttf);
 }
+
+.bg-yellow-500 {
+  background: var(--yellow-500);
+}
+
+.bg-yellow-100 {
+  background: var(--yellow-100);
+}
+
+.bg-purple-500 {
+  background: var(--purple-500);
+}
+
+.bg-purple-100 {
+  background: var(--purple-100);
+}
+
 body {
   font-size: 18px;
   background-color: var(--white);
@@ -73,10 +90,41 @@ html {
   color: hsl(228, 45%, 44%);
 }
 
+article:nth-child(1){
+  grid-area: create;
+}
+article:nth-child(2){
+  grid-area: social;
+}
+article:nth-child(3) {
+  grid-area: schedule;
+}
+
+article:nth-child(4) {
+  grid-area: write;
+}
+
+article:nth-child(5){
+  grid-area: manage;
+}
+
+article:nth-child(6) {
+  grid-area: maintain;
+}
+
+article:nth-child(7) {
+  grid-area: audience;
+}
+
+article:nth-child(8) {
+  grid-area: growth;
+}
+
 .grid-container {
   /* background-color: red; */
   display: grid;
   grid-auto-columns: 1fr;
+  gap: 1.5rem;
   grid-template-areas:
     "create"
     "social"
@@ -92,10 +140,11 @@ html {
   font-family: dmSansVariable;
 }
 
-.grid-container article:nth-child(1) {
+
+
+/* .grid-container article:nth-child(1) {
   grid-area: create;
   background-color: var(--yellow-100);
-  /* background-image: url("./assets/images/"); */
 }
 .grid-container:nth-child(1) article::after {
   content: attr(data-text);
@@ -108,7 +157,6 @@ html {
   grid-area: social;
   background-color: var(--purple-500);
   color: var(--white);
-  /* color: red; */
 }
 
 .grid-container article:nth-child(3) {
@@ -140,7 +188,7 @@ html {
   grid-area: growth;
   background-color: var(--purple-500);
   color: white;
-}
+} */
 
 .flex-column-center{
   display: flex;
@@ -151,7 +199,6 @@ html {
 
 .flex-row-center{
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   gap: 20px;
 }
@@ -163,9 +210,9 @@ html {
       "write" "manage" "maintain" "schedule"
       "write" "audience" "growth" "growth";
     width: 90%;
-    background-color: red;
+    /* background-color: red; */
     margin: 0 auto;
-    height: 80%;
+    /* height: 80%; */
   }
 
   .grid-container article {
