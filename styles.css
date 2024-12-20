@@ -60,6 +60,25 @@ picture {
   src: url(./assets/fonts/DMSans-Italic-VariableFont_opsz\wght.ttf);
 }
 
+body {
+  display: grid;
+  place-content: center;
+  font-size: 18px;
+  background-color: var(--white);
+  /* min-height: 100vh; */
+  font-family: "dmSansVariable";
+}
+
+html {
+  height: 100vh;
+}
+
+article p{
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 32px;
+}
+
 .bg-yellow-500 {
   background: var(--yellow-500);
 }
@@ -76,6 +95,10 @@ picture {
   background: var(--purple-100);
 }
 
+.bg-white {
+  background-color: white;
+}
+
 .text-white {
   color: white;
 }
@@ -88,18 +111,50 @@ picture {
   color: var(--yellow-500);
 }
 
-
-body {
-  font-size: 18px;
-  background-color: var(--white);
-  min-height: 100vh;
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-html {
-  height: 100vh;
+.flex-column-space-between{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 
+.padding-around{
+  padding: 1.5rem;
+}
+
+.font-size-40{
+  font-size: 2rem;
+}
+
+.font-size-4rem{
+  font-size: 4.5rem;
+  text-align: center;
+  font-weight: 500;
+  line-height: 65px;
+  width: 90%;
+}
+
+.big-card {
+  padding: 3rem;
+}
+
+.italicized{
+  font-style: italic;
+}
 
 .attribution {
   font-size: 11px;
@@ -109,10 +164,28 @@ html {
   color: hsl(228, 45%, 44%);
 }
 
-article:nth-child(1){
+.grid-container {
+  background-color: red;
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "create"
+    "social"
+    "schedule"
+    "manage"
+    "maintain"
+    "write"
+    "audience"
+    "growth";
+  padding-block: 2rem;  
+  margin-inline: auto;
+}
+
+article:nth-child(1) {
   grid-area: create;
 }
-article:nth-child(2){
+article:nth-child(2) {
   grid-area: social;
 }
 article:nth-child(3) {
@@ -123,7 +196,7 @@ article:nth-child(4) {
   grid-area: write;
 }
 
-article:nth-child(5){
+article:nth-child(5) {
   grid-area: manage;
 }
 
@@ -139,108 +212,24 @@ article:nth-child(8) {
   grid-area: growth;
 }
 
-.grid-container {
-  /* background-color: red; */
-  display: grid;
-  grid-auto-columns: 1fr;
-  gap: 1.5rem;
-  grid-template-areas:
-    "create"
-    "social"
-    "schedule"
-    "manage"
-    "maintain"
-    "write"
-    "audience"
-    "growth";
-}
-
-.grid-container article {
-  font-family: dmSansVariable;
-}
-
-
-
-/* .grid-container article:nth-child(1) {
-  grid-area: create;
-  background-color: var(--yellow-100);
-}
-.grid-container:nth-child(1) article::after {
-  content: attr(data-text);
-  color: var(--purple-100);
-  position: absolute;
-  transform: translateX(-100%);
-}
-
-.grid-container article:nth-child(2) {
-  grid-area: social;
-  background-color: var(--purple-500);
-  color: var(--white);
-}
-
-.grid-container article:nth-child(3) {
-  grid-area: schedule;
-  background-color: var(--purple-100);
-}
-
-.grid-container article:nth-child(4) {
-  grid-area: manage;
-  background-color: var(--white);
-}
-
-.grid-container article:nth-child(5) {
-  grid-area: maintain;
-  background-color: var(--yellow-500);
-}
-
-.grid-container article:nth-child(6) {
-  grid-area: write;
-  background-color: var(--yellow-500);
-}
-
-.grid-container article:nth-child(7) {
-  grid-area: audience;
-  background-color: var(--white);
-}
-
-.grid-container article:nth-child(8) {
-  grid-area: growth;
-  background-color: var(--purple-500);
-  color: white;
-} */
-
-.flex-column-center{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.flex-row-center{
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
 @media screen and (min-width: 992px) {
   .grid-container {
     grid-template-areas:
-      "create" "social" "social" "schedule"
-      "write" "manage" "maintain" "schedule"
-      "write" "audience" "growth" "growth";
+    /* "create social social schedule"
+    "write manage audience schedule"
+    "write maintain growth growth" */
+    "create social social schedule"
+    "create social social schedule"
+    "write manage audience schedule"
+    "write maintain growth growth"
+    ;
     width: 90%;
-    /* background-color: red; */
-    margin: 0 auto;
-    /* height: 80%; */
   }
 
-  .grid-container article {
+  /* .grid-container article {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-
-
+  } */
 }
